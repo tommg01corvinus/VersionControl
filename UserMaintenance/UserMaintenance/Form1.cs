@@ -21,6 +21,7 @@ namespace UserMaintenance
             label1.Text = Resource1.FullName;
             button1.Text = Resource1.Add;
             button2.Text = Resource1.WriteToFile;
+            button3.Text = Resource1.Delete;
 
             listBox1.DataSource = users;
             listBox1.ValueMember = "ID";
@@ -54,6 +55,11 @@ namespace UserMaintenance
                 File.WriteAllText(saveFileDialog1.FileName, csv.ToString());
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            users.Remove((User) listBox1.SelectedItem);
         }
     }
 }
