@@ -4,23 +4,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using ProgramTervezesiMintak.Abstractions;
 
 namespace ProgramTervezesiMintak.Entities
 {
-    public class Ball: Toy
+    class Car : Toy
     {
-        public SolidBrush BallBrush { get; private set; }
-
-        public Ball(Color color)
-        {
-            BallBrush = new SolidBrush(color);
-        }
-
         protected override void DrawImage(Graphics g)
         {
-            g.FillEllipse(BallBrush, 0, 0, Width, Height);
+            Image img = Image.FromFile("Images/car.png");
+            g.DrawImage(img, 0, 0, Width, Height);
         }
     }
 }
